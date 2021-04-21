@@ -8,6 +8,7 @@ class ShoppingCartController extends Controller
 {
     public function submitForm(Request $request)
     {
+        //Validate the input of the form
         request()->validate([
             'email' => 'required|email:rfc,dns',
             'street' => 'required',
@@ -16,8 +17,9 @@ class ShoppingCartController extends Controller
 
         ]);
 
-        dump(request()->all());
+        //dump(request()->all());
 
+        //Request the input of the form
         $email = request('email');
         $street = request('street');
         $zipcode = request('zipcode');
@@ -27,9 +29,10 @@ class ShoppingCartController extends Controller
         //dd($this->fetchProducts());
         //var_dump($order);
 
+        //TODO: Create new rules to add the discount codes
         foreach($order as $i => $orderedProduct) {
             if ($orderedProduct > 0) {
-                var_dump($i);
+                //var_dump($i);
                 //var_dump($orderedProduct);
             }
         };
