@@ -1,0 +1,81 @@
+body {
+    font-family: 'Nunito';
+}
+.container {
+    max-width: 960px;
+}
+.site-header {
+    background-color: rgba(0, 0, 0, .85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+    color: #999;
+    transition: ease-in-out color .15s;
+}
+.site-header a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.border-top { 
+    border-top: 1px solid #e5e5e5; 
+}
+.border-bottom { 
+    border-bottom: 1px solid #e5e5e5; 
+}
+.box-shadow { 
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); 
+}
+.flex-equal > * {
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+.box {
+    background-image: url( '../images/marble.jpg' );
+    background-size: auto;
+    min-height: 600px;
+}
+.box a {
+    margin-left: 730px;
+    margin-bottom: 50px;
+}
+.row {
+    max-width: 960px;
+    margin-left: 300px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.row-order {
+    max-width: 960px;
+    margin-left: 300px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+.card {
+    margin-bottom: 25px;
+    align-items: center;
+    height: 520px;
+}
+.card-img-top {
+    padding-top: 5px;
+    height: 300px;
+    width: auto;
+}
+form {
+    margin-left: 250px;
+}
+.alert {
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .flex-md-equal > * {
+        -ms-flex: 1;
+        -webkit-box-flex: 1;
+        flex: 1;
+    }
+}
+.overflow-hidden { 
+    overflow: hidden; 
+}
