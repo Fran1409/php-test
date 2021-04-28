@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('articles');
-});
+Route::get('/', 'App\Http\Controllers\ArticlesController@show');
 
 Route::get('/articles', 'App\Http\Controllers\ArticlesController@show');
 Route::post('/shoppingcart', 'App\Http\Controllers\ShoppingCartController@submitForm');
