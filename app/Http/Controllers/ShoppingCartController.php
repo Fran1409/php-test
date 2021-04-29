@@ -38,12 +38,12 @@ class ShoppingCartController extends Controller
 
                     switch($discount) {
                         case 0:
-                            var_dump('no discount <br>');
+                            $discountMsg = "";
                             $price = $amount * $price;
                             break;
 
                         case 1:
-                            var_dump('buy two get one free <br>');
+                            //buy two get one free 
                             $discountMsg = "Buy two and get one free promotion!";
                             if($orderedProduct = 2){
                                 $amount = $orderedProduct + 1;
@@ -52,14 +52,14 @@ class ShoppingCartController extends Controller
                             break;
 
                         case 2:
-                            var_dump('20% discount <br>');
+                            //20% discount
                             $discountPercentage = 20;
                             $discountMsg = "You get ".$discountPercentage."% discount on this product!";
                             $price = $orderedProduct * ($price -($price * $discountPercentage/100 ));
                             break;
 
                         case 3:
-                            var_dump('3 products with min amount 2 pieces, cheapest product gets 50% discount <br>');
+                            //3 products with min amount 2 pieces, cheapest product gets 50% discount 
                             break;
                     }
                     
