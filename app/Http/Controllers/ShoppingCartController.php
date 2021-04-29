@@ -62,7 +62,10 @@ class ShoppingCartController extends Controller
                             break;
 
                         case 2:
-                            
+                            var_dump('20% discount <br>');
+                            $discountPercentage = 20;
+                            $price = $orderedProduct * ($price -($price * $discountPercentage/100 ));
+                            var_dump($amount .'<br>'.$price);
                             break;
 
                         case 3:
