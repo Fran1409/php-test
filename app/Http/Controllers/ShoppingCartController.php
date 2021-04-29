@@ -54,6 +54,7 @@ class ShoppingCartController extends Controller
 
                         case 1:
                             var_dump('buy two get one free <br>');
+                            $discountMsg = "Buy two and get one free promotion!";
                             if($orderedProduct = 2){
                                 $amount = $orderedProduct + 1;
                                 $price = $price*2;
@@ -64,6 +65,7 @@ class ShoppingCartController extends Controller
                         case 2:
                             var_dump('20% discount <br>');
                             $discountPercentage = 20;
+                            $discountMsg = "You get ".$discountPercentage."% discount on this product!";
                             $price = $orderedProduct * ($price -($price * $discountPercentage/100 ));
                             var_dump($amount .'<br>'.$price);
                             break;
@@ -72,13 +74,15 @@ class ShoppingCartController extends Controller
                             var_dump('3 products with min amount 2 pieces, cheapest product gets 50% discount <br>');
                             break;
                     }
+                    
                     }
                 }
             }
         };
 
         
-        $alert = "Thank you for your order! We will deliver as soon as possible to the following adress: {$street}, {$zipcode} - {$city}";
+        $alert = "Thank you for your order! We will deliver as soon as possible to the following adress: {$street}, {$zipcode} - {$city}.
+                Your order is: {$amount} x {$id} for the total of {$price}. {$discountMsg}";
 
         return view('shoppingcart')->with('alert', $alert);
     }
