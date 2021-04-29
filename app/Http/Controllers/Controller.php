@@ -92,7 +92,7 @@ class Controller extends BaseController
                 "price" => "100",
                 "btw" => "21%",
                 "amount" => "0",
-                "discountCode" => "0"
+                "discountCode" => "1"
             ], 
         ];
     }
