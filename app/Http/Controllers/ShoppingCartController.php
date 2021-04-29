@@ -50,6 +50,7 @@ class ShoppingCartController extends Controller
                     switch($discount) {
                         case 0:
                             var_dump('no discount <br>');
+                            $price = $amount * $price;
                             break;
 
                         case 1:
