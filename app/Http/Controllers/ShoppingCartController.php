@@ -17,8 +17,6 @@ class ShoppingCartController extends Controller
 
         ]);
 
-        //dump(request()->all());
-
         //Request the input of the form
         $email = request('email');
         $street = request('street');
@@ -26,26 +24,17 @@ class ShoppingCartController extends Controller
         $city = request('city');
         $order = request('products');
 
-        //dd($this->fetchProducts());
-        //var_dump($order);
-
         $products = $this->fetchProducts();
-        //var_dump($products);
 
         //TODO: Create new rules to add the discount codes
         foreach($order as $i => $orderedProduct) {
             if ($orderedProduct > 0) {
-                //var_dump($i .'<br>');
-                //var_dump($orderedProduct);
                 for($x = 1; $x < count($products)+1; ++$x){
-                    //var_dump(1000+$x .'<br>');
                    if( 1000+$x == strval($i)){
                        $id = $products[1000+$x]['id'];
                        $amount = $orderedProduct;
                        $price = $products[$id]['price'];
-                       $discount = $products[$id]['discountCode'];
-                        var_dump($discount .'<br>');                      
-                    
+                       $discount = $products[$id]['discountCode'];                  
 
                     switch($discount) {
                         case 0:
@@ -59,7 +48,6 @@ class ShoppingCartController extends Controller
                             if($orderedProduct = 2){
                                 $amount = $orderedProduct + 1;
                                 $price = $price*2;
-                                var_dump($amount .'<br>'.$price);
                             }
                             break;
 
@@ -68,7 +56,6 @@ class ShoppingCartController extends Controller
                             $discountPercentage = 20;
                             $discountMsg = "You get ".$discountPercentage."% discount on this product!";
                             $price = $orderedProduct * ($price -($price * $discountPercentage/100 ));
-                            var_dump($amount .'<br>'.$price);
                             break;
 
                         case 3:
