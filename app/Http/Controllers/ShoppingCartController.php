@@ -35,13 +35,40 @@ class ShoppingCartController extends Controller
         //TODO: Create new rules to add the discount codes
         foreach($order as $i => $orderedProduct) {
             if ($orderedProduct > 0) {
-                var_dump($i .'<br>');
+                //var_dump($i .'<br>');
                 //var_dump($orderedProduct);
                 for($x = 1; $x < count($products)+1; ++$x){
                     //var_dump(1000+$x .'<br>');
                    if( 1000+$x == strval($i)){
-                       $discount = $products[1000+$x]['discountCode'];
-                        var_dump($discount .'<br>');
+                       $id = $products[1000+$x]['id'];
+                       $amount = $orderedProduct;
+                       $price = $products[$id]['price'];
+                       $discount = $products[$id]['discountCode'];
+                        var_dump($discount .'<br>');                      
+                    
+
+                    switch($discount) {
+                        case 0:
+                            var_dump('no discount <br>');
+                            break;
+
+                        case 1:
+                            var_dump('buy two get one free <br>');
+                            if($orderedProduct = 2){
+                                $amount = $orderedProduct + 1;
+                                $price = $price*2;
+                                var_dump($amount .'<br>'.$price);
+                            }
+                            break;
+
+                        case 2:
+                            
+                            break;
+
+                        case 3:
+                            var_dump('3 products with min amount 2 pieces, cheapest product gets 50% discount <br>');
+                            break;
+                    }
                     }
                 }
             }
