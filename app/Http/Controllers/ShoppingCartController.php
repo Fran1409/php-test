@@ -44,7 +44,7 @@ class ShoppingCartController extends Controller
 
                         case 1:
                             //buy two get one free 
-                            $discountMsg = "Buy two and get one free promotion!";
+                            $discountMsg = "You get one product for free because of the buy two and get one free promotion!";
                             if($orderedProduct = 2){
                                 $amount = $orderedProduct + 1;
                                 $price = $price*2;
